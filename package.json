@@ -4,6 +4,7 @@
   "description": "FizzBuzz HTML CSS",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --check .",
     "test": "vitest"
   },
   "keywords": [
@@ -14,6 +15,11 @@
   "author": "Manon Carbonnel & Pin",
   "license": "MIT",
   "dependencies": {
+    "happy-dom": "^9.19.2",
+    "prettier": "^2.8.8",
     "vitest": "^0.31.1"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^9.3.0"
   }
 }
