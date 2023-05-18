@@ -1,0 +1,19 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "description": "FizzBuzz HTML CSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "fizzbuzz"
+  ],
+  "author": "Manon Carbonnel & Pin",
+  "license": "MIT",
+  "dependencies": {
+    "vitest": "^0.31.1"
+  }
+}
