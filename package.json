@@ -1,10 +1,12 @@
 {
-  "name": "fizzbuzz",
+  "name": "fizzbuzz-css",
   "version": "1.0.0",
   "description": "FizzBuzz HTML CSS",
   "main": "index.js",
   "scripts": {
+    "start": "serve ./public",
     "format": "prettier --check .",
+    "playwright": "playwright test",
     "test": "vitest"
   },
   "keywords": [
@@ -14,12 +16,11 @@
   ],
   "author": "Manon Carbonnel & Pin",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
+    "@playwright/test": "^1.33.0",
     "happy-dom": "^9.19.2",
     "prettier": "^2.8.8",
+    "serve": "^14.2.0",
     "vitest": "^0.31.1"
-  },
-  "devDependencies": {
-    "@testing-library/dom": "^9.3.0"
   }
 }
