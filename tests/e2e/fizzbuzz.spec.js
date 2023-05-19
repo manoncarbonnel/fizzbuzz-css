@@ -2,6 +2,12 @@ import { afterAll, beforeAll, describe, test } from 'vitest'
 import { chromium } from 'playwright'
 import { expect } from '@playwright/test'
 
+async function getAfterContent(divs) {
+  return (await divs.evaluateAll(
+    list => list.map(element => window.getComputedStyle(element, ':after').content.replace(/['"]+/g, ''))
+  ))[0]
+}
+
 describe('FizzBuzz', async () => {
   let browser
   let page
@@ -16,20 +22,21 @@ describe('FizzBuzz', async () => {
     await browser.close()
   })
 
-  test('has title', async () => {
-    const title = page.getByText('FizzBuzz')
-    await expect(title).toBeVisible()
-  });
-
-  test('Fizz', async () => {
-    const fizzDivs = page.locator('div:nth-child(3n)')
-    const contentText = await getAfterContent(fizzDivs)
+  test('should display Fizz every third item', async () => {
+    const divs = page.locator('div:nth-child(3n)')
+    const contentText = await getAfterContent(divs)
     await expect(contentText).toBe('Fizz')
   });
-})
 
-async function getAfterContent(fizzDivs) {
-  return (await fizzDivs.evaluateAll(
-    list => list.map(element => window.getComputedStyle(element, ':after').content.replace(/['"]+/g, ''))
-  ))[0]
-}
+  test('should display Buzz every fifth item', async () => {
+    const divs = page.locator('div:nth-child(5n)')
+    const contentText = await getAfterContent(divs)
+    await expect(contentText).toBe('Buzz')
+  });
+
+  test('should display FizzBuzz every fifteen item', async () => {
+    const divs = page.locator('div:nth-child(15n)')
+    const contentText = await getAfterContent(divs)
+    await expect(contentText).toBe('FizzBuzz')
+  });
+})

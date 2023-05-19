@@ -1,4 +1,6 @@
-node_modules
-/test-results/
-/playwright-report/
+# Node
+/node_modules
+
+# Playwright
+/output/
 /playwright/.cache/

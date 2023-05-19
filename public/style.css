@@ -1,3 +1,11 @@
 div:nth-child(3n)::after {
-    content: 'Fizz'
+  content: 'Fizz'
+}
+
+div:nth-child(5n)::after {
+  content: 'Buzz'
+}
+
+div:nth-child(15n)::after {
+  content: 'FizzBuzz'
 }

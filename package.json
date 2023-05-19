@@ -6,7 +6,7 @@
   "scripts": {
     "start": "serve ./public",
     "format": "prettier --check .",
-    "playwright": "playwright test --ui",
+    "playwright": "playwright test",
     "test": "vitest"
   },
   "keywords": [
