@@ -1,0 +1,16 @@
+.fizz,
+.buzz {
+  display: none;
+}
+
+div:nth-child(3n) .fizz {
+  display: initial;
+}
+
+:is(div:nth-child(3n), div:nth-child(5n)) .number {
+  display: none;
+}
+
+div:nth-child(5n) .buzz {
+  display: initial;
+}

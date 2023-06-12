@@ -15,7 +15,7 @@ describe('FizzBuzz', async () => {
   beforeAll(async () => {
     browser = await chromium.launch()
     page = await browser.newPage()
-    await page.goto('http://127.0.0.1:3000/');
+    await page.goto('http://127.0.0.1:3000/index-pseudoelem.html');
   })
 
   afterAll(async () => {

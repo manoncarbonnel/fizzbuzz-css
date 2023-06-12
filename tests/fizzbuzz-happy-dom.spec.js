@@ -5,10 +5,10 @@ const fizzBuzz = (input) =>
   input % 15 === 0
     ? 'FizzBuzz'
     : input % 5 === 0
-    ? 'Buzz'
-    : input % 3 === 0
-    ? 'Fizz'
-    : input + '';
+      ? 'Buzz'
+      : input % 3 === 0
+        ? 'Fizz'
+        : input + '';
 
 const baseHtmlFixture = () => {
   const window = new Window();
@@ -35,7 +35,6 @@ describe('Mounted', () => {
   it('should be mounted with base HTML', () => {
     const document = baseHtmlFixture();
     expect(document.querySelector('main')).toBeTruthy();
-    console.log(document.body.innerHTML);
   });
 });
 
